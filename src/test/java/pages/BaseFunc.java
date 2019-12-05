@@ -2,8 +2,10 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseFunc {
     private WebDriver driver;
@@ -13,6 +15,9 @@ public class BaseFunc {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
+
+    WebDriverWait wait = new WebDriverWait(driver, 10);
+
 
     public void goToUrl(String url) {
         if (url.startsWith("http://") || url.startsWith("https://")) {
@@ -27,7 +32,12 @@ public class BaseFunc {
         Select select = new Select(driver.findElement(locator));
         select.selectByVisibleText(text);
     }
-    public void clickButton (By go){
-    driver.findElement(go).click();
+    public void clickButton (By locator){
+    driver.findElement(locator).click();
     }
+    public void fillTheForm (By locator, String text) {
+        WebElement inputtext = driver.findElement(locator);
+       inputtext.sendKeys(text);
+    }
+
 }

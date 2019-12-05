@@ -7,7 +7,8 @@ public class HomePage {
 //    private final By FROM = By.xpath(".//select[@id='afrom']")
     private final By FROM = By.id("afrom");
     private final By TO = By.id("bfrom");
-    private final By BOOK = By.xpath(".//span[@class='gogogo']");
+    private final By BOOK = By.className("gogogo");
+//    private final By BOOK = By.xpath(".//span[@class='gogogo']");
     public HomePage(BaseFunc baseFunc) {
         this.baseFunc = baseFunc;
     }
