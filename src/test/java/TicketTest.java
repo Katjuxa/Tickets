@@ -36,6 +36,7 @@ public class TicketTest {
 //    choose seat
         SeatPage seatPage = new SeatPage(baseFunc);
         seatPage.ClickSeat();
+        seatPage.ClickBook();
 //    click confirmation button
         System.out.println("Hello");
 //    check thank you page
